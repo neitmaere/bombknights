@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://wd1tl2khkiwa"]
+[gd_scene load_steps=9 format=3 uid="uid://wd1tl2khkiwa"]
 
 [ext_resource type="Script" path="res://scenes/players/character.gd" id="1_3u2gt"]
 [ext_resource type="Texture2D" uid="uid://calytggui5kdc" path="res://graphics/characters/red_character.png" id="1_dyoh1"]
@@ -33,6 +33,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(40, 45)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.0]
+}
 
 [sub_resource type="Animation" id="Animation_chtfo"]
 resource_name = "run"
@@ -64,14 +76,55 @@ tracks/1/keys = {
 "values": [Vector2(40, -45), Vector2(35, -45), Vector2(30, -45), Vector2(35, -45), Vector2(40, -45), Vector2(45, -45), Vector2(50, -45), Vector2(45, -45)]
 }
 
+[sub_resource type="Animation" id="Animation_f746i"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedHandRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 45), Vector2(65, 45), Vector2(40, 45)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RedHandLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(40, -45), Vector2(-25, -45), Vector2(40, -45)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 4.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_748co"]
 _data = {
 "RESET": SubResource("Animation_h30w5"),
-"run": SubResource("Animation_chtfo")
+"run": SubResource("Animation_chtfo"),
+"slide": SubResource("Animation_f746i")
 }
 
 [node name="Character" type="CharacterBody2D"]
+collision_mask = 4
 script = ExtResource("1_3u2gt")
+slide_speed = 800.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_arojo")
@@ -93,3 +146,6 @@ libraries = {
 }
 autoplay = "run"
 speed_scale = 4.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

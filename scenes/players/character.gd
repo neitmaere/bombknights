@@ -13,7 +13,7 @@ var slide_direction = Vector2.ZERO
 var last_valid_direction = Vector2.RIGHT  # Speichert die letzte echte Richtung
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	if is_sliding:
 		move_and_slide()
@@ -54,7 +54,12 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func start_slide(direction: Vector2):
+	anim_player.stop()
 	is_sliding = true
+	
+	if not anim_player.is_playing():
+			anim_player.play("slide")  # Animation starten
+	
 	slide_direction = direction
 	velocity = slide_direction * slide_speed
 	
@@ -64,6 +69,7 @@ func start_slide(direction: Vector2):
 	tween.tween_property(self, "velocity", Vector2.ZERO, slide_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 	await get_tree().create_timer(slide_duration - 0.1).timeout  # Warte, bis das Slide vorbei ist
+	anim_player.play("RESET")
 	is_sliding = false
 
 
