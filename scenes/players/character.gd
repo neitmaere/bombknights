@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var rotation_speed: float = 0.1  # Je kleiner der Wert, desto weicher die Drehung
 @export var slide_speed: float = 600.0  # Geschwindigkeit beim Sliden
 #@export var slide_distance: float = 512.0  # 2 Tiles weit (128px * 2)
-@export var slide_duration: float = 0.5  # Wie lange das Slide dauert
+@export var slide_duration: float = 0.6  # Wie lange das Slide dauert
 
 @onready var anim_player = $AnimationPlayer  # AnimationPlayer referenzieren
 
@@ -63,7 +63,7 @@ func start_slide(direction: Vector2):
 	var tween = create_tween()
 	tween.tween_property(self, "velocity", Vector2.ZERO, slide_duration).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	await get_tree().create_timer(slide_duration).timeout  # Warte, bis das Slide vorbei ist
+	await get_tree().create_timer(slide_duration - 0.1).timeout  # Warte, bis das Slide vorbei ist
 	is_sliding = false
 
 
