@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var speed: float = 200.0
+@export var speed: float = 300.0
 @export var rotation_speed: float = 0.1  # Je kleiner der Wert, desto weicher die Drehung
 @export var slide_speed: float = 600.0  # Geschwindigkeit beim Sliden
-@export var slide_distance: float = 512.0  # 2 Tiles weit (128px * 2)
-@export var slide_duration: float = 0.4  # Wie lange das Slide dauert
+#@export var slide_distance: float = 512.0  # 2 Tiles weit (128px * 2)
+@export var slide_duration: float = 0.5  # Wie lange das Slide dauert
 
 @onready var anim_player = $AnimationPlayer  # AnimationPlayer referenzieren
 
@@ -26,8 +26,6 @@ func _physics_process(delta):
 	if Input.is_action_pressed("down"):
 		direction.y += 1
 	if Input.is_action_pressed("left"):
-		print(direction)
-		print(rotation)
 		direction.x -= 1
 	if Input.is_action_pressed("right"):
 		direction.x += 1
@@ -57,7 +55,6 @@ func _physics_process(delta):
 	
 func start_slide(direction: Vector2):
 	is_sliding = true
-	print(direction)
 	slide_direction = direction
 	velocity = slide_direction * slide_speed
 	
