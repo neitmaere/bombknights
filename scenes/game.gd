@@ -14,18 +14,12 @@ func _process(_delta):
 	if Input.is_action_just_pressed("bomb"):
 		print("Player steht auf Tile: ", player_tile_coords)
 		place_bomb()
-	
-	#if last_bomb:
-		## Sende Signal an die Bombe, um die Kollision zu aktivieren
-		#var last_bomb_tile_coords = tilemap.local_to_map(tilemap.to_local(last_bomb.global_position))
-		#if last_bomb_tile_coords != player_tile_coords:
-			#last_bomb.player_left_bomb.emit()
-			#last_bomb = null  # Zurücksetzen, damit das Signal nicht mehrfach gesendet wird
 			
-	if last_bomb and player_pos.distance_to(last_bomb.global_position) > 100:
-		# Sende Signal an die Bombe, um die Kollision zu aktivieren
-		last_bomb.player_left_bomb.emit()
-		last_bomb = null  # Zurücksetzen, damit das Signal nicht mehrfach gesendet wird
+	if last_bomb and is_instance_valid(last_bomb):
+		if player_pos.distance_to(last_bomb.global_position) > 100:
+			# Sende Signal an die Bombe, um die Kollision zu aktivieren
+			last_bomb.player_left_bomb.emit()
+			last_bomb = null  # Zurücksetzen, damit das Signal nicht mehrfach gesendet wird
 
 func place_bomb():
 	if bomb_scene:

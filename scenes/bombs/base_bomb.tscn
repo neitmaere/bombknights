@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4wh7ogiy5nyk"]
+[gd_scene load_steps=5 format=3 uid="uid://b4wh7ogiy5nyk"]
 
 [ext_resource type="Texture2D" uid="uid://cp6xv1gullmlo" path="res://graphics/bombs/base_bomb.png" id="1_uxctu"]
 [ext_resource type="Script" path="res://scenes/bombs/base_bomb.gd" id="1_vpc3r"]
+[ext_resource type="PackedScene" uid="uid://ctmctl6p5nhe6" path="res://scenes/bombs/explosion.tscn" id="2_e8n42"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_77hh8"]
 radius = 52.0096
@@ -10,6 +11,7 @@ radius = 52.0096
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_vpc3r")
+explosion_scene = ExtResource("2_e8n42")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uxctu")
@@ -17,4 +19,9 @@ texture = ExtResource("1_uxctu")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_77hh8")
 
+[node name="DetonationTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="player_left_bomb" from="." to="." method="_on_player_left_bomb"]
+[connection signal="timeout" from="DetonationTimer" to="." method="_on_detonation_timer_timeout"]
