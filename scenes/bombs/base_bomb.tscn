@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4wh7ogiy5nyk"]
+
+[ext_resource type="Texture2D" uid="uid://cp6xv1gullmlo" path="res://graphics/bombs/base_bomb.png" id="1_uxctu"]
+[ext_resource type="Script" path="res://scenes/bombs/base_bomb.gd" id="1_vpc3r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77hh8"]
+radius = 52.0096
+
+[node name="BaseBomb" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_vpc3r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uxctu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_77hh8")
+
+[connection signal="player_left_bomb" from="." to="." method="_on_player_left_bomb"]
