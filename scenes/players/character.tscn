@@ -121,7 +121,7 @@ _data = {
 "slide": SubResource("Animation_f746i")
 }
 
-[node name="Character" type="CharacterBody2D"]
+[node name="Character" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 6
 script = ExtResource("1_3u2gt")
 slide_speed = 800.0

@@ -23,13 +23,17 @@ func _process(_delta):
 
 func place_bomb():
 	if bomb_scene:
-		var bomb_instance = bomb_scene.instantiate()
-		var tile_size = tilemap.tile_set.tile_size
-
 		# Spielerposition zur Tile-Koordinate umwandeln
 		var player_pos = player.global_position
 		var tile_coords = tilemap.local_to_map(player_pos)
 		var bomb_pos = tilemap.map_to_local(tile_coords)
+		
+		if is_bomb_at_position(bomb_pos):
+			return
+		
+		print("create bomb")
+		var bomb_instance = bomb_scene.instantiate()
+		var tile_size = tilemap.tile_set.tile_size		
 
 		# Setze Bombe auf das Tile-Zentrum
 		bomb_instance.global_position = bomb_pos
@@ -37,3 +41,10 @@ func place_bomb():
 		move_child(bomb_instance, player.get_index())
 		
 		last_bomb = bomb_instance
+
+func is_bomb_at_position(pos) -> bool:  
+	for bomb in get_tree().get_nodes_in_group("Bomb"):
+		print("bomb ffff")
+		if bomb.global_position.distance_to(pos) < 100:
+			return true
+	return false

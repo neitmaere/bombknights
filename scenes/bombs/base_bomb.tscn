@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_77hh8"]
 radius = 52.0096
 
-[node name="BaseBomb" type="StaticBody2D"]
+[node name="BaseBomb" type="StaticBody2D" groups=["Bomb"]]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_vpc3r")
@@ -23,5 +23,6 @@ shape = SubResource("CircleShape2D_77hh8")
 wait_time = 2.0
 autostart = true
 
+[connection signal="exploded" from="." to="." method="explode"]
 [connection signal="player_left_bomb" from="." to="." method="_on_player_left_bomb"]
 [connection signal="timeout" from="DetonationTimer" to="." method="_on_detonation_timer_timeout"]

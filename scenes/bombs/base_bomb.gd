@@ -25,12 +25,8 @@ func _on_player_left_bomb() -> void:
 
 func _on_detonation_timer_timeout() -> void:
 	explode()
-	queue_free()
 	
 func explode():
-	# Explosion auslösen und Signal senden
-	exploded.emit()  
-
 	# Bombe unsichtbar machen
 	visible = false  
 	collision_shape.set_deferred("disabled", true)
@@ -53,8 +49,8 @@ func explode():
 				break
 			spawn_explosion(explosion_pos)
 
-	# Bombe löschen, nachdem die Explosion gestartet wurde
-	await get_tree().create_timer(0.5).timeout  
+	## Bombe löschen, nachdem die Explosion gestartet wurde
+	#await get_tree().create_timer(0.5).timeout  
 	queue_free()
 
 func spawn_explosion(pos):

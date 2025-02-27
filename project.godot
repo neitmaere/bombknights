@@ -15,6 +15,11 @@ run/main_scene="res://scenes/levels/game.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[global_group]
+
+Player="PlayerGroup"
+Bomb="Bomb"
+
 [input]
 
 left={
