@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Player="PlayerGroup"
 Bomb="Bomb"
+Barrel="Barrels"
 
 [input]
 
@@ -69,6 +70,7 @@ slide={
 2d_physics/layer_2="Bombs"
 2d_physics/layer_3="Walls_Objects"
 2d_physics/layer_4="Items"
+2d_physics/layer_5="Barrels"
 
 [rendering]
 

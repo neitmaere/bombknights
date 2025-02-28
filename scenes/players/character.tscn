@@ -122,7 +122,7 @@ _data = {
 }
 
 [node name="Character" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 6
+collision_mask = 22
 script = ExtResource("1_3u2gt")
 slide_speed = 800.0
 

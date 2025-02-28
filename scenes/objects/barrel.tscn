@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://3g5cgs60sglf"]
+
+[ext_resource type="Script" path="res://scenes/objects/barrel.gd" id="1_6sr2r"]
+[ext_resource type="Texture2D" uid="uid://dh8r13edvgri5" path="res://graphics/objects/barrels.png" id="1_wi4v2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4j675"]
+radius = 42.1922
+height = 121.402
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddvrk"]
+size = Vector2(122, 122)
+
+[node name="Barrel" type="StaticBody2D" groups=["Barrel"]]
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_6sr2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -2)
+rotation = -2.52906
+shape = SubResource("CapsuleShape2D_4j675")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wi4v2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(2.25, 0.25)
+shape = SubResource("RectangleShape2D_ddvrk")
+debug_color = Color(0.739774, 0.424026, 0.525473, 0.42)

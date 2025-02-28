@@ -10,5 +10,5 @@ func _on_explosion_area_body_entered(body: Node2D) -> void:
 		print("Player hit" + body.to_string())
 	elif body.is_in_group("Bomb"):
 		print("is bomb: " + body.to_string() )
-		body.exploded.emit()
+		body.explode()
 		body.queue_free()

@@ -30,10 +30,8 @@ func place_bomb():
 		
 		if is_bomb_at_position(bomb_pos):
 			return
-		
-		print("create bomb")
+			
 		var bomb_instance = bomb_scene.instantiate()
-		var tile_size = tilemap.tile_set.tile_size		
 
 		# Setze Bombe auf das Tile-Zentrum
 		bomb_instance.global_position = bomb_pos
