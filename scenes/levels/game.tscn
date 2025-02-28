@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=4 uid="uid://c1tfl3q6uctm8"]
+[gd_scene load_steps=11 format=4 uid="uid://c1tfl3q6uctm8"]
 
 [ext_resource type="PackedScene" uid="uid://wd1tl2khkiwa" path="res://scenes/players/character.tscn" id="1_3s725"]
 [ext_resource type="Script" path="res://scenes/game.gd" id="1_6thhe"]
 [ext_resource type="PackedScene" uid="uid://b4wh7ogiy5nyk" path="res://scenes/bombs/base_bomb.tscn" id="2_7dt4y"]
 [ext_resource type="Texture2D" uid="uid://ckltyoihass8p" path="res://graphics/tilesheet/tilesheet@2.png" id="2_ipowd"]
 [ext_resource type="PackedScene" uid="uid://3g5cgs60sglf" path="res://scenes/objects/barrel.tscn" id="5_c168y"]
+[ext_resource type="PackedScene" uid="uid://dhdjd4xwtyhma" path="res://scenes/game_cam.tscn" id="6_thywv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bh24k"]
 texture = ExtResource("2_ipowd")
@@ -67,7 +68,7 @@ tile_map_data = PackedByteArray("AAD/////AAAJAAQAADD//wAAAAAKAAAAAFD//wEAAAAKAAA
 tile_set = SubResource("TileSet_tjmvw")
 
 [node name="Character" parent="." instance=ExtResource("1_3s725")]
-position = Vector2(444, 244)
+position = Vector2(52, 70)
 
 [node name="Barrels" type="Node2D" parent="."]
 
@@ -103,3 +104,6 @@ position = Vector2(670, 795)
 
 [node name="Barrel11" parent="Barrels" instance=ExtResource("5_c168y")]
 position = Vector2(673, 1037)
+
+[node name="GameCam" parent="." node_paths=PackedStringArray("tile_map") instance=ExtResource("6_thywv")]
+tile_map = NodePath("../Level/Walls")
