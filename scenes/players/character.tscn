@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/players/character.gd" id="1_3u2gt"]
 [ext_resource type="Texture2D" uid="uid://calytggui5kdc" path="res://graphics/characters/red_character.png" id="1_dyoh1"]
 [ext_resource type="Texture2D" uid="uid://6fwt78k7ntg4" path="res://graphics/characters/red_hand.png" id="2_h1lda"]
-[ext_resource type="Texture2D" uid="uid://cy5ceccd7kqgw" path="res://graphics/weapon_sword.png" id="3_s4m1d"]
-[ext_resource type="Texture2D" uid="uid://mbaby6715yrb" path="res://graphics/shield_curved.png" id="5_2164m"]
+[ext_resource type="Texture2D" uid="uid://cy5ceccd7kqgw" path="res://graphics/weapons/weapon_sword.png" id="3_s4m1d"]
+[ext_resource type="Texture2D" uid="uid://mbaby6715yrb" path="res://graphics/weapons/shield_curved.png" id="5_2164m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_arojo"]
 radius = 43.0

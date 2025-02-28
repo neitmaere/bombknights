@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dog651ci1xxhf"
-path="res://.godot/imported/weapon_arrow.png-6d4180de2922527ff16e56041eb0630c.ctex"
+uid="uid://dfo08rm0abtsd"
+path="res://.godot/imported/weapon_axe_large.png-f17dd744d760da1281b774e06ca7bc01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/weapon_arrow.png"
-dest_files=["res://.godot/imported/weapon_arrow.png-6d4180de2922527ff16e56041eb0630c.ctex"]
+source_file="res://graphics/weapons/weapon_axe_large.png"
+dest_files=["res://.godot/imported/weapon_axe_large.png-f17dd744d760da1281b774e06ca7bc01.ctex"]
 
 [params]
 

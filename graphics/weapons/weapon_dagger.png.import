@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mbaby6715yrb"
-path="res://.godot/imported/shield_curved.png-53b8997db55a07e4a5aca45582bcacb5.ctex"
+uid="uid://4r7x4bngq35h"
+path="res://.godot/imported/weapon_dagger.png-2ec37b129bb4fbe78585291bcb8bfb84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/shield_curved.png"
-dest_files=["res://.godot/imported/shield_curved.png-53b8997db55a07e4a5aca45582bcacb5.ctex"]
+source_file="res://graphics/weapons/weapon_dagger.png"
+dest_files=["res://.godot/imported/weapon_dagger.png-2ec37b129bb4fbe78585291bcb8bfb84.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjy180apfg80u"
-path="res://.godot/imported/weapon_axe_double.png-57905a11de0a8e9d75f69ae1bf151f4f.ctex"
+uid="uid://cu2b1b14dwtsr"
+path="res://.godot/imported/weapon_longsword.png-4ca3582bc9cd5ac39e035aebd5988e93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/weapon_axe_double.png"
-dest_files=["res://.godot/imported/weapon_axe_double.png-57905a11de0a8e9d75f69ae1bf151f4f.ctex"]
+source_file="res://graphics/weapons/weapon_longsword.png"
+dest_files=["res://.godot/imported/weapon_longsword.png-4ca3582bc9cd5ac39e035aebd5988e93.ctex"]
 
 [params]
 
